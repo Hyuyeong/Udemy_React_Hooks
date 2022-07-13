@@ -26,11 +26,18 @@ const Search = props => {
       setResult(data.query.search);
     };
 
-    if (searchWord) {
+    if (searchWord && !result.length) {
       getAPI();
+    } else {
+      const timer = setTimeout(() => {
+        if (searchWord) {
+          getAPI();
+        }
+      }, 1000);
+      return () => {
+        clearTimeout(timer);
+      };
     }
-
-    console.log('useEffect');
   }, [searchWord]);
 
   const renderedResults = result.map(item => {
