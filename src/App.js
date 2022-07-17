@@ -1,6 +1,8 @@
 // import DetailComment from './components/DetailComment';
 import Dropdown from './components/Dropdown';
 import Search from './components/Search';
+import Translate from './components/Translate';
+import Convert from './components/Convert';
 
 function App() {
   const options = [
@@ -24,7 +26,9 @@ function App() {
       <DetailComment />
       <DetailComment /> */}
       {/* <Search /> */}
-      <Dropdown options={options} />
+      {/* <Dropdown options={options} />
+      <Translate /> */}
+      <Convert />
     </div>
   );
 }
